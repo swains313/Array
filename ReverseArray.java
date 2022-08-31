@@ -1,60 +1,41 @@
-package com.Array19august2022;
+package com.Array23august2022;
 
 import java.util.Scanner;
 
 public class ReverseArray {
 
 	public static void main(String[] args) {
-	Scanner sc=new Scanner(System.in);
-	
-	System.out.println("read The Array : ");
-	int x[] =readArray();
-	
-	System.out.println(" before Reverse Array  : ");
-	displayArray(x);
-	
-	
-	reverseArray(x);
-	
-	}
-	
-
-	 static int[] readArray() {
+		
 		Scanner sc=new Scanner(System.in);
-		System.out.println("enter The Size Of Array : ");
+		
+		System.out.println("Enter the size of an arary n:");
 		int n=sc.nextInt();
 		
 		int ar[]=new int[n];
+		
 		for(int i=0;i<ar.length;i++)
 		{
 			ar[i]=sc.nextInt();
 		}
-		return ar;
+		reverseArray(ar);
 	}
-	 
-	 
-	 static void displayArray(int []n)
-	 {
-		 for(int i=0;i<n.length;i++)
-		 {
-			 System.out.print(n[i]+"  ");
-		 }
-	 }
-	 
-	
-	static void reverseArray(int []n)
+	static void reverseArray(int []ar)
 	{
-		for(int i=0;i<n.length/2;i++)
+		
+		int i=0,j=ar.length-1;
+		
+		while(i<j)
 		{
-			int t=n[i];
-			n[i]=n[n.length-1-i];
-			n[n.length-1-i]=t;
+			int temp=ar[i];
+			ar[i]=ar[j];
+			ar[j]=temp;
+			i++;
+			j--;
 		}
-		System.out.println("\n after Reverse Array : ");
-		for(int i=0;i<n.length;i++)
+		 for(int k=0;k<ar.length;k++)
 		{
-			System.out.print(n[i]+" ");
-		}
+			System.out.print(ar[k]+" ");
+		}		
 	}
 	
 
